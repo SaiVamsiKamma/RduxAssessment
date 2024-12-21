@@ -1,19 +1,19 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-import store from "./store/store";
+import store from "./store/store";  // Your redux store
 import ThemeProvider from "./context/themeContext";
 import "./assets/styles/global.css";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+ReactDOM.render(
   <Provider store={store}>
     <ThemeProvider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </ThemeProvider>
-  </Provider>
+  </Provider>,
+  document.getElementById("root")
 );

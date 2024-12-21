@@ -2,7 +2,7 @@ import React from "react";
 import { useCart } from "../hooks/useCart";
 
 const Cart = () => {
-  const [cart, dispatch] = useCart();
+  const [cart, dispatch] = useCart();  // Access the cart state and dispatch function
 
   const removeFromCart = (id) => {
     dispatch({ type: "remove from cart", payload: id });
