@@ -40,9 +40,6 @@ function Nav() {
       <h1>Order Manangement</h1>
       <NavList>
         <NavItem>
-          <StyledNavLink to="/" activeClassName="active">
-            Home
-          </StyledNavLink>
         </NavItem>
         <NavItem>
           <StyledNavLink to="/cart" activeClassName="active">
