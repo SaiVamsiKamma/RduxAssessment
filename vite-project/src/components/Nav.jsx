@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-// Styled components for the Nav component
+
 const NavContainer = styled.div`
   background-color: #333;
   padding: 20px;
@@ -26,11 +26,11 @@ const StyledNavLink = styled(NavLink)`
   font-weight: bold;
 
   &.active {
-    color: #f39c12; // Highlight active link with yellow
+    color: #f39c12; 
   }
 
   &:hover {
-    color: #3498db; // Change color on hover
+    color: #3498db; 
   }
 `;
 

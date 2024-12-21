@@ -1,22 +1,22 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setProducts } from "../reducers/productSlice";  // Correctly import the action
+import { setProducts } from "../reducers/productSlice";  
 import axios from "axios";
 import { useCart } from "../hooks/useCart";
 
 const ProductList = () => {
   const products = useSelector((state) => state.products.list);
   const dispatch = useDispatch();
-  const [, cartDispatch] = useCart();  // Destructure to get the dispatch function
+  const [, cartDispatch] = useCart();  
 
   useEffect(() => {
     axios.get("http://localhost:3000/products").then((response) => {
-      dispatch(setProducts(response.data)); // Dispatch action to set products
+      dispatch(setProducts(response.data)); 
     });
   }, [dispatch]);
 
   const addToCart = (product) => {
-    // Dispatch the action to add product to cart
+   
     cartDispatch({ type: "add to cart", payload: product });
   };
 

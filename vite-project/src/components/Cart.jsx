@@ -6,13 +6,13 @@ const Cart = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    // Fetch products from json-server
+   
     axios
       .get("http://localhost:3000/products")
       .then((response) => setProducts(response.data))
       .catch((error) => console.error("Error fetching products:", error));
 
-    // Fetch cart data from json-server
+   
     axios
       .get("http://localhost:3000/cart")
       .then((response) => setCart(response.data))
@@ -21,10 +21,10 @@ const Cart = () => {
 
   const addToCart = async (product) => {
     try {
-      // Add product to cart in db.json
+     
       await axios.post("http://localhost:3000/cart", product);
 
-      // Update local state to reflect the added product
+   
       setCart((prevCart) => [...prevCart, product]);
 
       console.log("Product added to cart:", product);
@@ -35,10 +35,10 @@ const Cart = () => {
 
   const removeFromCart = async (productId) => {
     try {
-      // Send DELETE request to remove the product from the cart in db.json
+
       await axios.delete(`http://localhost:3000/cart/${productId}`);
 
-      // Update local state to reflect the removal of the product
+  
       setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
 
       console.log("Product removed from cart:", productId);

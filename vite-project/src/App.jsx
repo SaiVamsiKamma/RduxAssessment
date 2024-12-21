@@ -10,7 +10,7 @@ const App = () => {
     <div>
       
       <Nav></Nav>
-      
+      <ThemeToggle />
       <Routes>
         {/* <Route path="/" element={<ProductList />} /> */}
         <Route path="/" element={<Cart />} />

@@ -4,17 +4,17 @@ import { useReducer } from "react";
 const cartReducer = (state, action) => {
   switch (action.type) {
     case "add to cart":
-      // Add the item to the cart if it's not already in the cart
+   
       if (state.some(item => item.id === action.payload.id)) {
         return state;
       }
-      return [...state, action.payload];  // Add item to cart
+      return [...state, action.payload];  
     case "remove from cart":
-      return state.filter((item) => item.id !== action.payload);  // Remove item from cart
+      return state.filter((item) => item.id !== action.payload);  
     default:
       return state;
   }
 };
 
-// Custom hook to manage cart state
+
 export const useCart = () => useReducer(cartReducer, []);
